@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Деталі абонемента</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="pageTitle">Створення абонемента</h1>
+        <div id="errorBox" class="error-message"></div>
+
+        <form id="membershipForm">
+            <input type="hidden" id="id" value="0">
+            
+            <div class="form-group">
+                <label>Тип абонемента:</label>
+                <input type="text" id="membershipType" required>
+            </div>
+            <div class="form-group">
+                <label>Дата видачі:</label>
+                <input type="datetime-local" id="issueDate" required>
+            </div>
+            <div class="form-group">
+                <label>Дата закінчення:</label>
+                <input type="datetime-local" id="expirationDate" required>
+            </div>
+            <div class="form-group">
+                <label>Ціна (грн):</label>
+                <input type="number" step="0.01" id="price" required>
+            </div>
+            <div class="form-group">
+                <label>ID Спортзалу:</label>
+                <input type="number" id="gymId" required>
+            </div>
+            <div class="form-group">
+                <label>ID Відвідувача:</label>
+                <input type="number" id="visitorId" required>
+            </div>
+
+            <button type="submit">Зберегти</button>
+            <button type="button" class="delete-btn" onclick="window.location.href='index.html'">Скасувати</button>
+        </form>
+        <div id="relatedInfoCard" class="related-info" style="display: none;">
+            <div class="info-grid">
+                <div class="info-box">
+                    <h4>Спортзал</h4>
+                    <p id="gymDetailsText">Завантаження...</p>
+                </div>
+                <div class="info-box">
+                    <h4>Відвідувач</h4>
+                    <p id="visitorDetailsText">Завантаження...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="details.js"></script>
+</body>
+</html>
